@@ -1,0 +1,228 @@
+/* =====================
+   CSS RESET
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =====================
+   COLOR THEME
+===================== */
+:root {
+    --bg-main: #020617;
+    /* page background */
+    --bg-card: #0f172a;
+    /* resume container */
+    --primary: #38bdf8;
+    /* headings & links */
+    --accent: #22d3ee;
+    /* hover / highlights */
+    --text-main: #e5e7eb;
+    /* main text */
+    --text-muted: #94a3b8;
+    /* secondary text */
+    --border: #1e293b;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.resume-container {
+    max-width: 900px;
+    margin: auto;
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 34px;
+    letter-spacing: 1px;
+    color: var(--primary);
+}
+
+.subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+.contact,
+.links {
+    font-size: 14px;
+    margin-top: 8px;
+    color: var(--text-muted);
+}
+
+.print-btn {
+    margin-top: 14px;
+    background: var(--primary);
+    color: #020617;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+section {
+    margin-bottom: 36px;
+}
+
+section h2 {
+    font-size: 20px;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    color: var(--primary);
+    border-bottom: 2px solid var(--border);
+}
+
+.item {
+    margin-bottom: 18px;
+}
+
+.item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.item span {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+ul {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+ul li {
+    margin-bottom: 6px;
+}
+
+.skills a {
+    font-weight: 500;
+    margin-right: 4px;
+}
+
+.project-links a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .resume-container {
+        padding: 24px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    section h2 {
+        font-size: 18px;
+    }
+}
+
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+        overflow: hidden;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-size: 11.5px;
+        line-height: 1.35;
+    }
+
+    .resume-container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        transform: scale(0.92);
+        transform-origin: top left;
+    }
+
+    header {
+        margin-bottom: 18px;
+    }
+
+    section {
+        margin-bottom: 10px;
+    }
+
+    section h2 {
+        margin-bottom: 6px;
+        padding-bottom: 3px;
+    }
+
+    .item {
+        margin-bottom: 8px;
+    }
+
+    ul {
+        margin-left: 14px;
+        margin-top: 4px;
+    }
+
+    ul li {
+        margin-bottom: 2px;
+    }
+
+    section,
+    .item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .print-btn {
+        display: none;
+    }
+}
